@@ -1,0 +1,31 @@
+{
+  "name": "<%= actName %>",
+  "version": "0.0.1",
+  "description": "UC Activity <%= actName %>",
+  "main": "server/app.js",
+  "private": true,
+  "scripts": {
+    "watch": "scrat server clean; scrat release -cwL",
+    "start": "scrat server start",
+    "release": "scrat release -cpd ../",
+    "ci": "npm i; npm i bower; node_modules/bower/bin/bower install; scrat release -compd ../"
+  },
+  "keywords": [
+    "activity",
+    "<%= actName %>"
+  ],
+  "author": {
+    "name": "<%= gitName %>",
+    "email": "<%= gitEmail %>"
+  },
+  <% if (gitAddress) { %>
+  "act": {
+    "git": "<%= gitAddress %>"
+  },
+  <% } %>
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.13.3",
+    "body-parser": "^1.14.1"
+  }
+}
